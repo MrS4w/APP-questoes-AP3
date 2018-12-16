@@ -1,6 +1,6 @@
 /*
 * Autor: Victor Antonio Barbosa Silva
-* Última atualização: 08/01/2017
+* Última atualização: 08/01/2018
 */
 package com.example.victor.ap3;
 import java.text.DecimalFormat;
@@ -25,23 +25,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button.setOnClickListener(this);
 
     }
+
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(this, Tela2.class);
         EditText editText1 = (EditText) findViewById(R.id.editText);
         EditText editText2 = (EditText) findViewById(R.id.editText2);
         Bundle bundle = new Bundle();
-        double x,y;
-        x=(Double.parseDouble(String.valueOf(editText1.getText()))+Double.parseDouble(String.valueOf(editText2.getText())))*0.3;
+        double x, y;
+        x = (Double.parseDouble(String.valueOf(editText1.getText())) + Double.parseDouble(String.valueOf(editText2.getText()))) * 0.3;
         double valor1 = Double.parseDouble(String.valueOf(editText1.getText()));
         double valor2 = Double.parseDouble(String.valueOf(editText2.getText()));
-        if (valor1>10||valor2>10){
+        if(valor1 > 10 || valor2 > 10) {
             Context context = getApplicationContext();
             CharSequence text = "Insira as notas correntamente!";
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
-        }else {
+        } else {
             y = (5 - x) / 0.16;
             DecimalFormat df = new DecimalFormat("0");
             double z = Math.round(y);
